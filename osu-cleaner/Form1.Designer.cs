@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainApp));
             this.elementList = new System.Windows.Forms.CheckedListBox();
             this.directoryLabel = new System.Windows.Forms.Label();
             this.directoryPath = new System.Windows.Forms.TextBox();
@@ -256,8 +257,9 @@
             this.Controls.Add(this.directoryPath);
             this.Controls.Add(this.directoryLabel);
             this.Controls.Add(this.elementList);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainApp";
-            this.Text = "osu!Cleaner v1.05";
+            this.Text = "osu!Cleaner v1.10";
             this.Load += new System.EventHandler(this.MainApp_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
