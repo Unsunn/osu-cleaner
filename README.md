@@ -4,7 +4,7 @@ Small tool, written in C#, to clean unused elements from beatmaps.
 If you are using a SSD, you will be happy! Deleting those elements will save your disk space even by few gigabytes. You can choose what to delete: videos, storyboards, beatmap skins, backgrounds and hitsounds. You can also choose to move those files instead of permanent purge.
 
 ## Download
-### Latest release: v1.05 (06.11.2018) [Download here!](https://github.com/henntix/osu-cleaner/releases/download/1.0/osu-cleaner.exe)
+### Latest release: v1.10 (16.06.2020) [Download here!](https://github.com/Unsunn/osu-cleaner/releases/download/1.10/osu-cleaner.exe)
 
 
 ## License: The MIT License (MIT)
