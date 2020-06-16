@@ -1,7 +1,8 @@
 /**
 * osu-cleaner
-* Version: 1.00
+* Version: 1.10
 * Author: henntix
+* Author: Deep Sea
 */
 using System;
 using System.Collections.Generic;
@@ -143,12 +144,12 @@ namespace osu_cleaner
 
         private void DeletePermanentlyCheckbox_CheckedChanged(object sender, EventArgs e)
         {
-            if(DeletePermanentlyCheckbox.Checked) moveCheckBox.Checked = false;
+            if (DeletePermanentlyCheckbox.Checked) moveCheckBox.Checked = false;
         }
 
         private void moveCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if(moveCheckBox.Checked) DeletePermanentlyCheckbox.Checked = false;
+            if (moveCheckBox.Checked) DeletePermanentlyCheckbox.Checked = false;
             if (moveCheckBox.Checked) deleteButton.Text = "Move";
             else deleteButton.Text = "Delete";
         }
@@ -222,7 +223,7 @@ namespace osu_cleaner
                 foreach (string file in Directory.GetFiles(d))
                 {
                     if (videoDeleteCheckbox.Checked)
-                        if (RegexMatch(file, "avi$") || RegexMatch(file, "flv$"))
+                        if (RegexMatch(file, "avi$") || RegexMatch(file, "flv$") || RegexMatch(file, "mp4$"))
                         {
                             foundElements.Add(file);
                             filesSize += getFileSize(file);
@@ -262,7 +263,7 @@ namespace osu_cleaner
         private void findComplete(object sender, RunWorkerCompletedEventArgs e)
         {
             foreach (string file in foundElements)
-                    elementList.Items.Add(file);
+                elementList.Items.Add(file);
             filesSizeLabel.Text = "Found: " + Math.Round((double)(filesSize) / 1048576, 4) + " MB";
             foundElements.Clear();
             FindProgressBar.Visible = false;
@@ -352,9 +353,16 @@ namespace osu_cleaner
             skinElements.Add("\\\\button-"); ;
             skinElements.Add("\\\\combobreak");
             skinElements.Add("\\\\comboburst");
-            skinElements.Add("\\\\count");
+            skinElements.Add("\\\\comboburst-");
+            skinElements.Add("\\\\count1");
+            skinElements.Add("\\\\count2");
+            skinElements.Add("\\\\count3");
             skinElements.Add("\\\\cursor");
+            skinElements.Add("\\\\cursor-");
+            skinElements.Add("\\\\cursormiddle");
+            skinElements.Add("\\\\cursortrail");
             skinElements.Add("\\\\default-");
+            skinElements.Add("\\\\fail-background");
             skinElements.Add("\\\\failsound");
             skinElements.Add("\\\\followpoint");
             skinElements.Add("\\\\fruit-");
@@ -368,10 +376,16 @@ namespace osu_cleaner
             skinElements.Add("\\\\hit50");
             skinElements.Add("\\\\hitcircle");
             skinElements.Add("\\\\inputoverlay-");
+            skinElements.Add("\\\\lightingN");
+            skinElements.Add("\\\\lightingN-");
+            skinElements.Add("\\\\lightingL");
+            skinElements.Add("\\\\lightingL-");
+            skinElements.Add("\\\\inputoverlay-");
             skinElements.Add("\\\\lighting\\.png");
             skinElements.Add("\\\\lighting@2x\\.png");
             skinElements.Add("\\\\mania-");
             skinElements.Add("\\\\menu\\.");
+            skinElements.Add("\\\\menu-");
             skinElements.Add("\\\\menu-back");
             skinElements.Add("\\\\particle100");
             skinElements.Add("\\\\particle300");
